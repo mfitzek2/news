@@ -1,0 +1,29 @@
+<h2>Vytvořit</h2>
+<form action="/insert" method="post">
+    <div><label for="title">Titulek</label>
+    <input type="text" name="title" id="title">
+</div>
+<div>
+    <label for="category">Rubrika</label>
+    <select name="category" id="category">
+        {{#each category}}
+        <option value="{{this}}">{{this}}</option>
+         {{/each}}
+    </select>
+</div>
+<div>
+    <label for="content">Text</label>
+    <textarea name="content" id="content" cols="30" rows="10"></textarea>
+
+</div>
+<label for="status">Stav</label>
+        <input type="radio" name="published" id="status" checked>
+        <input type="radio" name="published" id="status" >
+
+<div>
+    <label for="date">Date</label>
+    <input type="date" name="date" id="date" >
+</div>
+
+<button type="submit">Submit</button>
+</form> 

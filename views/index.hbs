@@ -1,0 +1,35 @@
+<h2>Přehled článků</h2>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Titulek článku</th>
+      <th scope="col">Datum</th>
+      <th scope="col">Rubrika</th>
+      <th scope="col">Vydáno</th>
+    </tr>
+  </thead>
+  <tbody>
+      {{#each data}}
+      <tr>
+          <td><a href="/detail/{{id_news}}">{{title}}</a></td>
+          <td>{{date}}</td>
+          <td>{{category}}</td>
+          <td>{{#if published}}
+              Ano
+                {{else}}
+                Ne
+                {{/if}}
+          </td>
+          <td> <a href="/edit/{{id_news}}" class="btn btn-info">Editovat</a>
+                <a href="/delete/{{id_news}}" class="btn btn-danger">Smazat</a>
+          </td>
+      </tr>
+      {{else}}
+      <tr>
+          <td>no data</td>
+      </tr>
+      {{/each}}
+  </tbody>
+</table>
+<a href="/insert">Přidat záznam</a>

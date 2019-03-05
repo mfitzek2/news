@@ -1,0 +1,33 @@
+<h2>Editovat</h2>
+{{#if data}}
+<form action="/edit/{{data.id_news}}" method="post">
+    <div><label for="title">Titulek</label>
+    <input type="text" name="title" id="title" value="{{data.title}}">
+</div>
+<div>
+    <label for="category">Rubrika</label>
+    <select name="category" id="category"  value="{{data.category}}">
+        {{#each category}}
+        <option value="{{this}}">{{this}}</option>
+         {{/each}}
+    </select>
+</div>
+<div>
+    <label for="content">Text</label>
+    <textarea name="content" id="content" cols="30" rows="10">{{data.content}}</textarea>
+
+</div>
+<label for="status">Stav</label>
+        <input type="radio" name="published" id="status" {{#if data.published}}checked{{/if}}>
+        <input type="radio" name="published" id="status" {{#unless data.published}}checked{{/unless}}>
+
+<div>
+    <label for="date">Date</label>
+    <input type="date" name="date" id="date" value="{{data.date}}">
+</div>
+
+<button type="submit">Submit</button>
+</form> 
+{{else}}
+Error passing data
+{{/if}}

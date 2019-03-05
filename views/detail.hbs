@@ -1,0 +1,15 @@
+{{#if data}}
+
+<h2>{{data.title}}</h2>
+<p>Rubrika: {{data.category}}</p>
+<hr>
+<p>
+    {{safeString data.content}}
+</p>
+<hr>
+<p>Datum: {{data.date}}|Stav uveřejnění: <strong>{{#if data.published}}vydáno{{else}}nevydáno{{/if}}</strong></p>
+<p><a href="/">Zpět na hlavní stránku</a></p>
+<hr>
+{{else}}
+<h2>Data error</h2>
+{{/if}}
